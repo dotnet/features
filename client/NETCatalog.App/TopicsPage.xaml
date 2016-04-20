@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NETCatalog.TopicsPage">
+  <ContentPage.Content>
+    <ScrollView x:Name="ScrollView" Orientation="Vertical" BackgroundColor="Transparent">
+      <Grid x:Name="TopicsGrid"
+            Padding="0, 30, 0, 0"
+            BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+      </Grid>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
