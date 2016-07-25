@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79FF70B1-869F-4102-B850-4B357CB70B6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NETCatalog.App</RootNamespace>
+    <AssemblyName>NETCatalog.App</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="CategoriesPage.xaml.cs">
+      <DependentUpon>CategoriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConceptPage.xaml.cs">
+      <DependentUpon>ConceptPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TopicsPage.xaml.cs">
+      <DependentUpon>TopicsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CommonMark, Version=0.1.0.0, Culture=neutral, PublicKeyToken=001ef8810438905d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonMark.NET.0.12.0\lib\portable-net45+wp80+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\CommonMark.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Markdig, Version=0.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Markdig.0.5.1\lib\portable40-net40+sl5+win8+wp8+wpa81\Markdig.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6482\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6482\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6482\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TopicsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CategoriesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConceptPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="aspnetcore\aspnetcore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="aspnetcore\cross-platform.png" />
+    <EmbeddedResource Include="aspnetcore\microservices.png" />
+    <EmbeddedResource Include="aspnetcore\modular.png" />
+    <EmbeddedResource Include="aspnetcore\open-source.png" />
+    <EmbeddedResource Include="aspnetcore\performance.png" />
+    <EmbeddedResource Include="csharpvbfsharp\csharp.png" />
+    <EmbeddedResource Include="csharpvbfsharp\fsharp.png" />
+    <EmbeddedResource Include="csharpvbfsharp\vb.png" />
+    <EmbeddedResource Include="netcore\cross-platform.png" />
+    <EmbeddedResource Include="netcore\modular.png" />
+    <EmbeddedResource Include="netcore\multi-core-jit.png" />
+    <EmbeddedResource Include="netcore\open-source.png" />
+    <EmbeddedResource Include="netcore\ryujit.png" />
+    <EmbeddedResource Include="netcore\side-by-side.png" />
+    <EmbeddedResource Include="netfx\aspnet-webforms.png" />
+    <EmbeddedResource Include="netfx\click-once.png" />
+    <EmbeddedResource Include="netfx\multi-core-jit.png" />
+    <EmbeddedResource Include="netfx\ngen.png" />
+    <EmbeddedResource Include="netfx\ryujit.png" />
+    <EmbeddedResource Include="netfx\wcf.png" />
+    <EmbeddedResource Include="netfx\windows-forms.png" />
+    <EmbeddedResource Include="netfx\wpf.png" />
+    <EmbeddedResource Include="platform\async-await.png" />
+    <EmbeddedResource Include="platform\delegates.png" />
+    <EmbeddedResource Include="platform\dynamic.png" />
+    <EmbeddedResource Include="platform\extension-methods.png" />
+    <EmbeddedResource Include="platform\garbage-collection.png" />
+    <EmbeddedResource Include="platform\generics.png" />
+    <EmbeddedResource Include="platform\lambdas.png" />
+    <EmbeddedResource Include="platform\linq.png" />
+    <EmbeddedResource Include="platform\netstandard.png" />
+    <EmbeddedResource Include="platform\nuget.png" />
+    <EmbeddedResource Include="platform\open-standards.png" />
+    <EmbeddedResource Include="platform\p-invoke.png" />
+    <EmbeddedResource Include="platform\portable-class-libraries.png" />
+    <EmbeddedResource Include="platform\reflection.png" />
+    <EmbeddedResource Include="platform\simd.png" />
+    <EmbeddedResource Include="platform\task-parallel-library.png" />
+    <EmbeddedResource Include="uwp\net-native.png" />
+    <EmbeddedResource Include="uwp\win10-family.png" />
+    <EmbeddedResource Include="uwp\windows-store.png" />
+    <EmbeddedResource Include="uwp\winrt.png" />
+    <EmbeddedResource Include="vs\activity-tracing.png" />
+    <EmbeddedResource Include="vs\async-debugging.png" />
+    <EmbeddedResource Include="vs\csharp-repl.png" />
+    <EmbeddedResource Include="vs\data-oriented-breakpoints.png" />
+    <EmbeddedResource Include="vs\edit-and-continue.png" />
+    <EmbeddedResource Include="vs\managed-return-values.png" />
+    <EmbeddedResource Include="xamarin\native-mobile.png" />
+    <EmbeddedResource Include="xamarin\xamarin-forms.png" />
+    <EmbeddedResource Include="xamarin\xamarin-studio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="csharpvbfsharp\csharpvbfsharp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="netcore\netcore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="netfx\netfx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="platform\platform.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="uwp\uwp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="vs\vs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="xamarin\xamarin.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

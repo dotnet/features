@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The MIT License (MIT)
 
 Copyright (c) .NET Foundation and Contributors
@@ -19,3 +20,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+=======
+Copyright (c) .NET Foundation and contributors. All rights reserved.
+
+Documentation is licensed under the Creative Commons Attribution 4.0
+International License (http://creativecommons.org/licenses/by/4.0/legalcode).
+
+Code is licensed under the MIT License (https://opensource.org/licenses/MIT).
+
+This license does not grant you rights to use any trademarks or logos of
+Microsoft. For Microsoft’s general trademark guidelines, go to
+http://go.microsoft.com/fwlink/?LinkID=254653.
+>>>>>>> 11dae8ae0c6614959a824a4f6e8603ac3a27554d
