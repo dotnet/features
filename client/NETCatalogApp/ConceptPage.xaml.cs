@@ -13,7 +13,7 @@ namespace NETCatalog
     public partial class ConceptPage : ContentPage
     {
         private readonly HttpClient _client = new HttpClient();
-        private readonly string _baseUrl = "http://dotnet-buildtwentysixteendemo.azurewebsites.net/topics";
+        private readonly string _baseUrl = "http://dotnet-features.azurewebsites.net/topics";
 
         public ConceptPage(string category, string conceptName, string niceConceptName)
         {

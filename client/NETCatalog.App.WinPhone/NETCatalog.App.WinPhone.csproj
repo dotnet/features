@@ -113,8 +113,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NETCatalog.App\NETCatalog.App.csproj">
-      <Name>NETCatalog.App</Name>
+    <ProjectReference Include="..\NETCatalogApp\NETCatalogApp.csproj">
+      <Name>NETCatalogApp</Name>
+      <Project>{79FF70B1-869F-4102-B850-4B357CB70B6B}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

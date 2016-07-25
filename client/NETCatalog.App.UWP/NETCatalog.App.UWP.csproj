@@ -128,9 +128,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NETCatalog.App\NETCatalog.App.csproj">
+    <ProjectReference Include="..\NETCatalogApp\NETCatalogApp.csproj">
       <Project>{79ff70b1-869f-4102-b850-4b357cb70b6b}</Project>
-      <Name>NETCatalog.App</Name>
+      <Name>NETCatalogApp</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

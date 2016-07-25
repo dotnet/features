@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETCatalog.App.UWP", "NETCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETCatalog.App.Windows", "NETCatalog.App.Windows\NETCatalog.App.Windows.csproj", "{E699AE7C-4F5E-473C-B93F-EBBC71143AA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETCatalog.App", "NETCatalog.App.csproj", "{79FF70B1-869F-4102-B850-4B357CB70B6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETCatalogApp", "NETCatalogApp\NETCatalogApp.csproj", "{79FF70B1-869F-4102-B850-4B357CB70B6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
