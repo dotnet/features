@@ -14,13 +14,13 @@ namespace NETCatalog
             var topics = new List<Tuple<string, string>>
             {
                 Tuple.Create("platform", ".NET Platform"),
+			    Tuple.Create("csharpvbfsharp", "Languages"),
                 Tuple.Create("netcore", ".NET Core"),
                 Tuple.Create("netfx", ".NET Framework"),
                 Tuple.Create("aspnetcore", "ASP.NET Core"),
+				Tuple.Create("xamarin", "Xamarin"),
                 Tuple.Create("uwp", "Universal Windows"),
-                Tuple.Create("vs", "Visual Studio"),
-                Tuple.Create("xamarin", "Xamarin"),
-                Tuple.Create("csharpvbfsharp", "C#, VB and F#")
+                Tuple.Create("vs", "Visual Studio")
             };
 
             Title = ".NET Catalog";
