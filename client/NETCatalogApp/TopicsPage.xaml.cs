@@ -64,7 +64,8 @@ namespace NETCatalog
                 Text = categoryTitle,
                 HorizontalOptions = LayoutOptions.Center,
                 FontSize = 15,
-                BackgroundColor = Color.Transparent
+                BackgroundColor = Color.Transparent,
+				TextColor = Color.FromHex("#FFFFFF")
             };
 
             var labelTapRecognizer = new TapGestureRecognizer();

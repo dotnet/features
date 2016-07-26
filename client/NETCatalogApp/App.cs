@@ -6,7 +6,11 @@ namespace NETCatalog
     {
         public NETCatalogApp()
         {
-            MainPage = new NavigationPage(new TopicsPage());
+			MainPage = new NavigationPage(new TopicsPage())
+			{
+				BarBackgroundColor = Color.FromHex("#212238"),
+				BarTextColor = Color.FromHex("#FFFFFF")
+			};
         }
     }
 }
