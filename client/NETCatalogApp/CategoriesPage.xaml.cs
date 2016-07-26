@@ -138,7 +138,7 @@ namespace NETCatalog
                     Spacing = 10,
                     Orientation = StackOrientation.Horizontal,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Children = { label }
+                    Children = { image, label }
                 };
 
                 CategoriesGrid.Children.Add(sl, 0, row++);
