@@ -36,6 +36,9 @@ cross/rootfs/
 *.sln.ide
 *.ide/
 
+# VS Code
+.vscode
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
