@@ -14,10 +14,18 @@ public class InteractiveCatalog
         string line = String.Empty;
         string category = null;
 
-        while ((line = Console.ReadLine()) != null)
+        do
         {
+            Console.Clear();
+
+            if (category == null)
+            {
+
+            }
+
             category = await GetCatalogEntry(category, line);
-        }
+        } while ((line = Console.ReadLine()) != null);
+
     }
 
     private static async Task<string> GetCatalogEntry(string category, string concept)
