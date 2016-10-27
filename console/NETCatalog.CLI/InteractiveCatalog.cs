@@ -39,6 +39,7 @@ public class InteractiveCatalog
             else if (response != string.Empty && state == null)
             {
                 state = new[] {"category", response};
+                //needs error handling for bad input
                 await PrintConceptsForCategory(state[1]);
                 Console.WriteLine();
                 Console.WriteLine("Type value or press [Enter] to exit.");
@@ -65,6 +66,7 @@ public class InteractiveCatalog
             else if (response == string.Empty && state != null && state[0] == "concept")
             {
                 state = new[] {"category", state[1]};
+                //needs error handling for bad input
                 await PrintConceptsForCategory(state[1]);
                 Console.WriteLine();
                 Console.WriteLine("Type value or press [Enter] to exit.");
