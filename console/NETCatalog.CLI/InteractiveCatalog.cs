@@ -83,7 +83,7 @@ public class InteractiveCatalog
         var catalogEntry = await _client.GetStringAsync(_url);
         var categories = SplitLines(catalogEntry);
 
-        Console.WriteLine("Categories you can learn more about:\n");
+        Console.WriteLine("Learn more about /dotnet/. Pick a feature category.\n");
         foreach (var c in categories)
         {
             Console.WriteLine($"\t{c}");
@@ -97,7 +97,7 @@ public class InteractiveCatalog
         catalogEntry = await _client.GetStringAsync($"{_url}/{category}");
         var concepts = SplitLines(catalogEntry);
 
-        Console.WriteLine($"Concepts under /{category}/ you can learn more about:\n");
+        Console.WriteLine($"Learn more about /{category}/. Pick a concept.\n");
         foreach (var c in concepts)
         {
             Console.WriteLine($"\t{c}");
@@ -107,6 +107,7 @@ public class InteractiveCatalog
     private static async Task PrintConceptForCategory(string category, string concept)
     {
         var catalogEntry = await _client.GetStringAsync($"{_url}/{category}/{concept}");
+        Console.WriteLine($"You selected /{category}/{concept}/.\n");
         Console.WriteLine(catalogEntry);
     }
 
