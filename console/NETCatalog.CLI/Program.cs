@@ -9,7 +9,8 @@ namespace NETCatalog.CLI
     {
         public static void Main(string[] args)
         {
-            var url = "http://dotnet-buildtwentysixteendemo.azurewebsites.net/topics";
+
+            var url = "http://dotnet-features.azurewebsites.net/topics";
 
             var client = new HttpClient();
 
