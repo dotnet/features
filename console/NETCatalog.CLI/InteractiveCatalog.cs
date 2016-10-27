@@ -12,51 +12,82 @@ public class InteractiveCatalog
     public static async Task Start()
     {
         string response = null;
-        string category = null;
         string[] state = null;
 
         while (true)
         {
 
-        }
-
-        do
-        {
-            if (response == null && state == null)
-            {}
-            else if (response == String.Empty && state == null)
+            // exit condition
+            if (response == string.Empty && state == null)
             {
                 return;
             }
+            else
+            {
+                Console.Clear();
+            }
+
+
+            // base state - print categories
+            if (response == null && state == null)
+            {
+                await PrintCategoriesforCatalog();
+                Console.WriteLine();
+                Console.WriteLine("Type value or press [Enter] to exit.");
+            }
+            // category selected - print concepts
             else if (response != string.Empty && state == null)
             {
-                category = response;
-                response = null;
+                state = new[] {"category", response};
+                await PrintConceptsForCategory(state[1]);
+                Console.WriteLine();
+                Console.WriteLine("Type value or press [Enter] to exit.");
             }
-            else if (response == string.Empty && state[0] == "category")
+            // no concept selected (pressed Enter) - print categories
+            else if (response == string.Empty && state != null && state[0] == "category")
             {
-                category = null;
+                // reset to initial state
+                state = null;
                 response = null;
-            }
-            else if (response == string.Empty && state[0] == "concept")
+                await PrintCategoriesforCatalog();
+                Console.WriteLine();
+                Console.WriteLine("Type value or press [Enter] to exit.");
+            }              
+            // concept select - print concept
+            else if (response != String.Empty && state != null && state[0] == "category")
             {
-                category = state[1];
-                response = null;
+                await PrintConceptForCategory(state[1], response);
+                state = new[] {"concept", state[1], response};
+                Console.WriteLine();
+                Console.WriteLine("Press [Enter] when done.");
             }
-            else if (state[0] == "category")
+            // done reading concept - print concepts for category
+            else if (response == string.Empty && state != null && state[0] == "concept")
             {
-                category = state[1];
+                state = new[] {"category", state[1]};
+                await PrintConceptsForCategory(state[1]);
+                Console.WriteLine();
+                Console.WriteLine("Type value or press [Enter] to exit.");
             }
-                
-            state = await GetCatalogEntry(category, response);
-            Console.Clear();
-            Console.WriteLine();
-            Console.WriteLine("Type value or press [Enter] to exit.");
+                  
             Console.WriteLine();
 
             Console.Write("> ");
-        } while ((response = Console.ReadLine()) != null);
+            response = Console.ReadLine();
+        }
 
+    }
+
+    private static async Task PrintCategoriesforCatalog()
+    {
+        var catalogEntry = await _client.GetStringAsync(_url);
+        var categories = SplitLines(catalogEntry);
+
+        Console.WriteLine("Categories you can learn more about:\n");
+        foreach (var c in categories)
+        {
+            Console.WriteLine($"\t{c}");
+        }
     }
 
     private static async Task PrintConceptsForCategory(string category)
@@ -77,51 +108,6 @@ public class InteractiveCatalog
     {
         var catalogEntry = await _client.GetStringAsync($"{_url}/{category}/{concept}");
         Console.WriteLine(catalogEntry);
-    }
-
-    private static async string[] GetCatalogRequest(string category, string concept)
-    {
-
-        if (string.IsNullOrEmpty(category))
-        {
-            var catalogEntry = await _client.GetStringAsync(_url);
-            var categories = SplitLines(catalogEntry);
-
-            Console.WriteLine("Categories you can learn more about:\n");
-            foreach (var c in categories)
-            {
-                Console.WriteLine($"\t{c}");
-            }
-            return null;
-        }
-        else if (string.IsNullOrEmpty(concept))
-        {
-            string catalogEntry = null;
-            
-            try
-            {
-                catalogEntry = await _client.GetStringAsync($"{_url}/{category}");
-            }
-            catch
-            {
-                Console.WriteLine($"Not a valid category: {category}");
-                return new[] {"invalid"};
-            }
-            var concepts = SplitLines(catalogEntry);
-
-            Console.WriteLine($"Concepts under /{category}/ you can learn more about:\n");
-            foreach (var c in concepts)
-            {
-                Console.WriteLine($"\t{c}");
-            }
-            return new[] {"category",category};
-        }
-        else 
-        {
-            var catalogEntry = await _client.GetStringAsync($"{_url}/{category}/{concept}");
-            Console.WriteLine(catalogEntry);
-            return  new[] {"concept",category,concept};
-        }
     }
 
     private static IEnumerable<string> SplitLines(string text)
