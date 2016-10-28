@@ -8,7 +8,7 @@
     <ProjectGuid>{79FF70B1-869F-4102-B850-4B357CB70B6B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NETCatalog.App</RootNamespace>
+    <RootNamespace>NETCatalogApp</RootNamespace>
     <AssemblyName>NETCatalog.App</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
@@ -46,12 +46,80 @@
     <Compile Include="TopicsPage.xaml.cs">
       <DependentUpon>TopicsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TopicsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="features\aspnetcore\aspnetcore.png" />
+    <EmbeddedResource Include="features\aspnetcore\cross-platform.png" />
+    <EmbeddedResource Include="features\aspnetcore\microservices.png" />
+    <EmbeddedResource Include="features\aspnetcore\modular.png" />
+    <EmbeddedResource Include="features\aspnetcore\open-source.png" />
+    <EmbeddedResource Include="features\aspnetcore\performance.png" />
+    <EmbeddedResource Include="features\languages\csharp.png" />
+    <EmbeddedResource Include="features\languages\fsharp.png" />
+    <EmbeddedResource Include="features\languages\vb.png" />
+    <EmbeddedResource Include="features\netcore\cross-platform.png" />
+    <EmbeddedResource Include="features\netcore\modular.png" />
+    <EmbeddedResource Include="features\netcore\multi-core-jit.png" />
+    <EmbeddedResource Include="features\netcore\netcore.png" />
+    <EmbeddedResource Include="features\netcore\open-source.png" />
+    <EmbeddedResource Include="features\netcore\ryujit.png" />
+    <EmbeddedResource Include="features\netcore\side-by-side.png" />
+    <EmbeddedResource Include="features\netfx\aspnet-webforms.png" />
+    <EmbeddedResource Include="features\netfx\click-once.png" />
+    <EmbeddedResource Include="features\netfx\multi-core-jit.png" />
+    <EmbeddedResource Include="features\netfx\netfx.png" />
+    <EmbeddedResource Include="features\netfx\ngen.png" />
+    <EmbeddedResource Include="features\netfx\ryujit.png" />
+    <EmbeddedResource Include="features\netfx\wcf.png" />
+    <EmbeddedResource Include="features\netfx\windows-forms.png" />
+    <EmbeddedResource Include="features\netfx\wpf.png" />
+    <EmbeddedResource Include="features\platform\async-await.png" />
+    <EmbeddedResource Include="features\platform\delegates.png" />
+    <EmbeddedResource Include="features\platform\dynamic.png" />
+    <EmbeddedResource Include="features\platform\extension-methods.png" />
+    <EmbeddedResource Include="features\platform\garbage-collection.png" />
+    <EmbeddedResource Include="features\platform\generics.png" />
+    <EmbeddedResource Include="features\platform\lambdas.png" />
+    <EmbeddedResource Include="features\platform\linq.png" />
+    <EmbeddedResource Include="features\platform\netstandard.png" />
+    <EmbeddedResource Include="features\platform\nuget.png" />
+    <EmbeddedResource Include="features\platform\open-standards.png" />
+    <EmbeddedResource Include="features\platform\p-invoke.png" />
+    <EmbeddedResource Include="features\platform\platform.png" />
+    <EmbeddedResource Include="features\platform\portable-class-libraries.png" />
+    <EmbeddedResource Include="features\platform\reflection.png" />
+    <EmbeddedResource Include="features\platform\simd.png" />
+    <EmbeddedResource Include="features\platform\task-parallel-library.png" />
+    <EmbeddedResource Include="features\uwp\net-native.png" />
+    <EmbeddedResource Include="features\uwp\uwp.png" />
+    <EmbeddedResource Include="features\uwp\win10-family.png" />
+    <EmbeddedResource Include="features\uwp\windows-store.png" />
+    <EmbeddedResource Include="features\uwp\winrt.png" />
+    <EmbeddedResource Include="features\vs\activity-tracing.png" />
+    <EmbeddedResource Include="features\vs\async-debugging.png" />
+    <EmbeddedResource Include="features\vs\csharp-repl.png" />
+    <EmbeddedResource Include="features\vs\data-oriented-breakpoints.png" />
+    <EmbeddedResource Include="features\vs\edit-and-continue.png" />
+    <EmbeddedResource Include="features\vs\managed-return-values.png" />
+    <EmbeddedResource Include="features\vs\vs.png" />
+    <EmbeddedResource Include="features\xamarin\native-mobile.png" />
+    <EmbeddedResource Include="features\xamarin\xamarin-forms.png" />
+    <EmbeddedResource Include="features\xamarin\xamarin-studio.png" />
+    <EmbeddedResource Include="features\xamarin\xamarin.png" />
+    <EmbeddedResource Include="features\languages\languages.png" />
+    <EmbeddedResource Include="features\platform\_toc.csv" />
+    <EmbeddedResource Include="features\netfx\_toc.csv" />
+    <EmbeddedResource Include="features\netcore\_toc.csv" />
+    <EmbeddedResource Include="features\languages\_toc.csv" />
+    <EmbeddedResource Include="features\aspnetcore\_toc.csv" />
+    <EmbeddedResource Include="features\uwp\_toc.csv" />
+    <EmbeddedResource Include="features\vs\_toc.csv" />
+    <EmbeddedResource Include="features\_toc.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CategoriesPage.xaml">
@@ -64,37 +132,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="aspnetcore\aspnetcore.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="vs\activity-tracing.png" />
-    <EmbeddedResource Include="vs\async-debugging.png" />
-    <EmbeddedResource Include="vs\csharp-repl.png" />
-    <EmbeddedResource Include="vs\data-oriented-breakpoints.png" />
-    <EmbeddedResource Include="vs\edit-and-continue.png" />
-    <EmbeddedResource Include="xamarin\native-mobile.png" />
-    <EmbeddedResource Include="xamarin\xamarin-forms.png" />
-    <EmbeddedResource Include="xamarin\xamarin-studio.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="csharpvbfsharp\csharpvbfsharp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="netfx\netfx.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="platform\platform.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="uwp\uwp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="vs\vs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="xamarin\xamarin.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CommonMark">
@@ -116,68 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="aspnetcore\cross-platform.png" />
-    <EmbeddedResource Include="aspnetcore\microservices.png" />
-    <EmbeddedResource Include="aspnetcore\modular.png" />
-    <EmbeddedResource Include="aspnetcore\open-source.png" />
-    <EmbeddedResource Include="aspnetcore\performance.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="csharpvbfsharp\csharp.png" />
-    <EmbeddedResource Include="csharpvbfsharp\fsharp.png" />
-    <EmbeddedResource Include="csharpvbfsharp\vb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="netcore\cross-platform.png" />
-    <EmbeddedResource Include="netcore\modular.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="netcore\multi-core-jit.png" />
-    <EmbeddedResource Include="netcore\open-source.png" />
-    <EmbeddedResource Include="netcore\ryujit.png" />
-    <EmbeddedResource Include="netcore\side-by-side.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="netfx\aspnet-webforms.png" />
-    <EmbeddedResource Include="netfx\click-once.png" />
-    <EmbeddedResource Include="netfx\multi-core-jit.png" />
-    <EmbeddedResource Include="netfx\ngen.png" />
-    <EmbeddedResource Include="netfx\ryujit.png" />
-    <EmbeddedResource Include="netfx\wcf.png" />
-    <EmbeddedResource Include="netfx\windows-forms.png" />
-    <EmbeddedResource Include="netfx\wpf.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="platform\async-await.png" />
-    <EmbeddedResource Include="platform\extension-methods.png" />
-    <EmbeddedResource Include="platform\garbage-collection.png" />
-    <EmbeddedResource Include="platform\generics.png" />
-    <EmbeddedResource Include="platform\lambdas.png" />
-    <EmbeddedResource Include="platform\netstandard.png" />
-    <EmbeddedResource Include="platform\nuget.png" />
-    <EmbeddedResource Include="platform\open-standards.png" />
-    <EmbeddedResource Include="platform\p-invoke.png" />
-    <EmbeddedResource Include="platform\portable-class-libraries.png" />
-    <EmbeddedResource Include="platform\reflection.png" />
-    <EmbeddedResource Include="platform\simd.png" />
-    <EmbeddedResource Include="platform\task-parallel-library.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="uwp\net-native.png" />
-    <EmbeddedResource Include="uwp\win10-family.png" />
-    <EmbeddedResource Include="uwp\windows-store.png" />
-    <EmbeddedResource Include="uwp\winrt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="platform\dynamic.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="vs\managed-return-values.png" />
-    <EmbeddedResource Include="netcore\netcore.png" />
-    <EmbeddedResource Include="platform\delegates.png" />
-    <EmbeddedResource Include="platform\linq.png" />
+    <None Include="features\xamarin\_toc.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

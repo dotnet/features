@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 using Xamarin.Forms;
 
@@ -11,17 +13,7 @@ namespace NETCatalog
         {
             InitializeComponent();
 
-            var topics = new List<Tuple<string, string>>
-            {
-                Tuple.Create("platform", ".NET Platform"),
-			    Tuple.Create("csharpvbfsharp", "Languages"),
-                Tuple.Create("netcore", ".NET Core"),
-                Tuple.Create("netfx", ".NET Framework"),
-                Tuple.Create("aspnetcore", "ASP.NET Core"),
-				Tuple.Create("xamarin", "Xamarin"),
-                Tuple.Create("uwp", "Universal Windows"),
-                Tuple.Create("vs", "Visual Studio")
-            };
+			var topics = Loader.GetTOCAsTuples("NETCatalogApp.features._toc.csv");
 
             Title = ".NET Catalog";
             BackgroundColor = Color.FromHex("#35396b");
@@ -81,7 +73,7 @@ namespace NETCatalog
             var image = new Image
             {
                 Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromResource($"NETCatalog.App.{category}.{category}.png"),
+                Source = ImageSource.FromResource($"NETCatalogApp.features.{category}.{category}.png"),
                 BackgroundColor = Color.Transparent
             };
 

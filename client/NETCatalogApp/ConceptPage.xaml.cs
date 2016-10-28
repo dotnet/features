@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -12,23 +13,25 @@ namespace NETCatalog
 {
     public partial class ConceptPage : ContentPage
     {
-        private readonly HttpClient _client = new HttpClient();
         private readonly string _baseUrl = "http://dotnet-features.azurewebsites.net/topics";
+		//private Task<string> _getMarkdown = null;
 
         public ConceptPage(string category, string conceptName, string niceConceptName)
         {
+			//_getMarkdown = GetConcept(category, conceptName);
             InitializeComponent();
 
             Title = niceConceptName;
-
-            // It's okay not to await this here rather than blocking the UI thread.
-            GetMarkdownAndDisplayIt(category, conceptName);
         }
 
-        private async Task GetMarkdownAndDisplayIt(string category, string concept)
-        {
-            var markdown = await _client.GetStringAsync($"{_baseUrl}/{category}/{concept}");
+		private Task<string> GetConcept(string category, string concept)
+		{
+			var client = new HttpClient();
+			return client.GetStringAsync($"{_baseUrl}/{category}/{concept}");
+		}
 
+        private void UpdateDisplay(string concept)
+        {
             var htmlSource = new HtmlWebViewSource();
 
             var css = @"
@@ -39,9 +42,16 @@ namespace NETCatalog
             </style>
             ";
 
-            htmlSource.Html = $"<html><head>{css}</head><body>{CommonMarkConverter.Convert(markdown)}</body></html>";
+            htmlSource.Html = $"<html><head>{css}</head><body>{CommonMarkConverter.Convert(concept)}</body></html>";
 
             MarkdownWebView.Source = htmlSource;
         }
+
+		protected override async void OnAppearing()
+		{
+			var concept = await Loader.GetRequestForConceptTask();
+			UpdateDisplay(concept);
+			base.OnAppearing();
+		}
     }
 }
