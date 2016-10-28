@@ -39,7 +39,8 @@
   "buildOptions": {
     "debugType": "portable",
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "copyToOutput": "../../features/"
   },
 
   "runtimeOptions": {
@@ -53,7 +54,8 @@
       "wwwroot",
       "Views",
       "appsettings.json",
-      "web.config"
+      "web.config",
+      "../../features/"
     ]
   },
 
