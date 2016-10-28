@@ -1,2 +1,2 @@
 [config]
-project = web/src/NETCatalog.API
+project = web/NETCatalog.API
