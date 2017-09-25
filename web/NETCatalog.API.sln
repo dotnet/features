@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26906.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NETCatalog.API", "NETCatalog.API\NETCatalog.API.xproj", "{C4771612-69DA-4195-BF75-B8AB2B6F3255}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NETCatalog.API", "NETCatalog.API\NETCatalog.API.csproj", "{C4771612-69DA-4195-BF75-B8AB2B6F3255}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F98AB7C-BED3-4B7E-988E-08B17755BF9E}
 	EndGlobalSection
 EndGlobal
