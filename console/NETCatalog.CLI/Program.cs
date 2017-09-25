@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http;
+﻿using System.Threading.Tasks;
 
 namespace NETCatalog.CLI
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            InteractiveCatalog.Start().Wait();
-        }
+        public static async Task Main(string[] args) => await InteractiveCatalog.Start();
     }
 }
